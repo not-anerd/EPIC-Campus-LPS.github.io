@@ -1,153 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <!-- Custom PreHead code is injected here -->
-    
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tiny5">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+    <style>
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Source Code Pro", sans-serif
+        }
 
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name ="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tiny5">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
-        <style>
-        body,h1,h2,h3,h4,h5,h6 {font-family: "Source Code Pro", sans-serif}
-        h2{font-family: "Tiny5", sans-serif}
-        .w3-bar-block .w3-bar-item {padding:20px}
-        </style>
+        h2 {
+            font-family: "Tiny5", sans-serif
+        }
 
-        <!-- Builtin injector for disabling cache -->
-        <meta http-equiv="pragma" content="no-cache"/>
-
-        <!-- Set the title bar of the page -->
-        <title>Retro Game Design</title>
-
-        <!-- Custom PreStyle code is injected here -->
+        .w3-bar-block .w3-bar-item {
+            padding: 20px
+        }
         
+        body {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+            overflow: hidden;
+        }
 
-        <!-- Set the background colour of the document -->
-        <style>
-           body {
-                margin: 0px;
-                padding: 0px;
-                border: 0px;
-                overflow: hidden;
-            }
+        canvas {
+            image-rendering: optimizeSpeed;
+            -webkit-interpolation-mode: nearest-neighbor;
+            -ms-touch-action: none;
+            touch-action: none;
+            margin: 0px;
+            padding: 0px;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
 
-            canvas {
-                image-rendering: optimizeSpeed;
-                -webkit-interpolation-mode: nearest-neighbor;
-                -ms-touch-action: none;
-                touch-action: none;
-                margin: 0px;
-                padding: 0px;
-                  position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-               
-            }
-            :-webkit-full-screen #canvas {
-                width: 60%;
-                height: 60%;
-            }
-            :-webkit-full-screen {
-                width: 60%;
-                height: 60%;
-            }
-            
-            /* Custom Runner Styles */
-            div.gm4html5_div_class {
-                margin: 0px;
-                padding: 0px;
-            }
-            div.gm4html5_login {
-                padding: 20px;
-                position: absolute;
-                border: solid 2px #000000;
-                background-color: #404040;
-                color:#00ff00;
-                border-radius: 15px;
-                box-shadow: #101010 20px 20px 40px;
-            }
-            div.gm4html5_cancel_button {
-                float: right;
-            }
-            div.gm4html5_login_button {
-                float: left;
-            }
-            div.gm4html5_login_header {
-                text-align: center;
-            }
-            /* END - Custom Runner Styles */
-            
-        </style>
+        :-webkit-full-screen #canvas {
+            width: 60%;
+            height: 60%;
+        }
 
-        <!-- Custom PostStyle code is injected here -->
-        
+        :-webkit-full-screen {
+            width: 60%;
+            height: 60%;
+        }
 
-        <!-- Builtin injector for injecting flurry analytics code -->
-        
-    </head>
+        div.gm4html5_div_class {
+            margin: 0px;
+            padding: 0px;
+            text-align: center;
+        }
 
-    <!-- Custom PostHead code is injected here -->
-    
+        div.gm4html5_login {
+            padding: 20px;
+            position: absolute;
+            border: solid 2px #000000;
+            background-color: #404040;
+            color: #00ff00;
+            border-radius: 15px;
+            box-shadow: #101010 20px 20px 40px;
+        }
 
-    <!-- Custom PreBody code is injected here -->
-    
+        div.gm4html5_cancel_button {
+            float: right;
+        }
 
+        div.gm4html5_login_button {
+            float: left;
+        }
 
-    <body>
-        <div class="w3-top">
-            <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
-              <div class="w3-center w3-padding-16">Retro Game Design Camp 2024</div>
-            </div>
-          </div>
- 
+        div.gm4html5_login_header {
+            text-align: center;
+        }
+    </style>
+</head>
 
-        <div class="w3-container w3-padding-32 w3-center">  
-            <div class="w3-padding-32">
-                <h1>Anti-Smash Remix</h1>
-                <p>By K.Winn.</p>
-                <p>Move the blocks with WASD and press R to restart.</p>
-           </div>
-         </div>
-
-         <div class="w3-container w3-padding-32 w3-center">  
-            <div class="w3-padding-32">
-           </div>
-         </div>
-        
-       <div class="gm4html5_div_class" id="gm4html5_div_id" style = "text-align:center;">
-            
-            <!-- Builtin injector for splash screen -->
-            
-
-            <!-- Create the canvas element the game draws to -->
-            <canvas id="canvas" width="1024" height="1024" style="position: absolute; top: 60%; left: 50%; bottom: -50%; right: -50%; transform: translate(-50%, -50%);" >
-                <p>Your browser doesn't support HTML5 canvas.</p>
-            </canvas>
+<body>
+    <div class="w3-top">
+        <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+            <div class="w3-center w3-padding-16">Retro Game Design Camp 2024</div>
         </div>
-        
-        <!-- Run the game code -->
-        <script type="text/javascript" src="html5game/antismash.js?cachebust=1980491152"></script>
+    </div>
 
-        <!-- Builtin injector for injecting runner path -->
-        
+    <div class="w3-container w3-padding-32 w3-center">
+        <div class="w3-padding-32">
+            <h1>Anti-Smash Remix</h1>
+            <p>By K.Winn.</p>
+            <p>Move the blocks with WASD and press R to restart.</p>
+        </div>
+    </div>
 
-        <script>window.onload = GameMaker_Init;</script>
+    <div class="w3-container w3-padding-32 w3-center">
+        <div class="w3-padding-32">
+        </div>
+    </div>
 
-        <!-- Builtin injector for injecting google analytics code -->
-        <footer class="w3-row-padding w3-padding-32">
-            <a href="../index.html" class="w3-bar-item w3-button w3-hover-black">Back to Homepage</a>
-        </footer>
-    </body>
+    <div class="gm4html5_div_class" id="gm4html5_div_id">
+        <canvas id="canvas" width="1024" height="1024">
+            <p>Your browser doesn't support HTML5 canvas.</p>
+        </canvas>
+    </div>
 
-    <!-- Custom PostBody code is injected here -->
-    
+    <script type="text/javascript" src="html5game/antismash.js?cachebust=1980491152"></script>
+    <script>window.onload = GameMaker_Init;</script>
+
+    <footer class="w3-row-padding w3-padding-32">
+        <a href="../index.html" class="w3-bar-item w3-button w3-hover-black">Back to Homepage</a>
+    </footer>
+</body>
+
 </html>
